@@ -1,16 +1,16 @@
 const stdOut = process.stdout;
-const stdin = process.stdin;
+const stdIn = process.stdin;
 // don't worry about these next two lines of setup work.
-stdin.setRawMode(true);
-stdin.setEncoding("utf8");
+stdIn.setRawMode(true);
+stdIn.setEncoding("utf8");
 
 ////////////
 // Event Handling for User Input
 ////////////
 
-stdin.on("data", key => {
+stdIn.on("data", key => {
   if (key === "\u0003") {
-    console.log("Thanks for using me, ciao!");
+    stdOut.write("Thanks for using me, ciao!\n");
     process.exit();
   }
   if (key === "b") {
